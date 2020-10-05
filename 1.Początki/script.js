@@ -1,6 +1,6 @@
 //Zadanie 1:
 
-console.log("Bart³omiej £¹ka")		//Bart³omiej £¹ka
+console.log("Bartlomiej Laka")		//Bartlomiej Laka
 
 //Zadanie 2:
 
