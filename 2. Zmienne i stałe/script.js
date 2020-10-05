@@ -2,7 +2,7 @@
 
 const	num = 1,				//liczba
 		str = '2',				//string
-		combo = num + str		//liczba + string
+		combo = num + str,		//liczba + string
 		bool = true,			//wartosc logiczna
 		nothing = null;			//wartosc specjalna
 
