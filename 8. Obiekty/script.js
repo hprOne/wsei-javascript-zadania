@@ -5,7 +5,6 @@ const car = {                   //obiekt car
     model: "Dodge Viper SRT",
     engine: "diesel",
     status: "free",
-    
     changeStatus: function (x) {
     this.status = x;
     }
@@ -30,7 +29,6 @@ const numbers = {
 }
 
 numbers.sumNumbersInArray([0, 6, 5, 44, 100])
-
 console.log(numbers.sum);
 
 //Zadanie 4:
