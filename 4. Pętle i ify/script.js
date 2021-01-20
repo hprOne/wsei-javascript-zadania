@@ -40,8 +40,8 @@ console.log(result);
 
 var n = 5;
 
-for(i=0; i<n; i++) {
-  if(i%2===0){
+for(i=0; i<n; i++) {                                    // pêtla for
+  if(i%2===0){                                          // modulo 2 
     console.log(i + " parzysta")
   }else{
     console.log(i + " nieparzysta")
@@ -52,14 +52,14 @@ for(i=0; i<n; i++) {
 
 let n = 5;
 
-for(let i=0; i<n; i++){
+for(let i=0; i<n; i++){                                 // pêtla for
   for(let j=0; j<n; j++){
     console.log("i= " + i + ", j=" + j);
   }
 }
 
 //Zadanie 7:
-for(let i=0; i<=100; i++) {
+for(let i=0; i<=100; i++) {                             // pêtla for
   if ( i%3===0 && i%5===0) {
     console.log(`${i} FizzBuzz`);
   } else if ( i%3===0) {
