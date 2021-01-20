@@ -9,7 +9,7 @@ const interval = setInterval(() => {
     {
       clearInterval(interval);
     }
-}, 3000);
+}, 3000);                                   //3000ms - odstep pomiedzy wykonywaniem funkcji
 
 //Zadanie 2:
 
@@ -26,5 +26,5 @@ setTimeout(()=>{
     if(i>table.length){
       clearInterval(interval);
     }
-  }, 2000)
-}, 3000)
+  }, 2000)                                  //2000ms - odstep pomiedzy wykonywaniem funkcji (elementy dowolnej tablicy)
+}, 3000)                                    //3000ms - odstep pomiedzy wykonywaniem funkcji (kolejny element tej tablicy)
