@@ -36,11 +36,11 @@ console.log(mathDataset(document.getElementById('datasetCheck')));  //wywo³anie 
 
 //Zadanie 4:
 
-document.getElementById('spanText').innerText = 'dowolny';      //tekst w elemencie spanText
+document.getElementById('spanText').innerHTML = 'dowolny';      //tekst w elemencie spanText
 
 //Zadanie 5:
 
-document.getElementById('spanText').classList.add('dowolnaklasa');  //klasa elementu spanText
+document.getElementById('spanText').className('dowolnaklasa');  //klasa elementu spanText
 
 //Zadanie 6:
 
