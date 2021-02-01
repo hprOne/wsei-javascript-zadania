@@ -54,7 +54,7 @@ let object1 = {																//obiekt z div i span
     span2: 'to jest span'
 }
 
-function createStructure(obj, parent) {										//struktura z obiektu
+function createStructure (obj, parent) {										//struktura z obiektu
 	for(let key in obj){
 		let elem = document.createElement(key.substr(0, key.length - 1));
 		
@@ -70,6 +70,28 @@ function createStructure(obj, parent) {										//struktura z obiektu
 }
 
 createStructure(object1, document.querySelector("#root"));				//wywo³anie funkcji
+
+
+//Zadanie 11:
+
+function checkNumbers (text) {
+    const reg = /\d/g;													// \d - liczby, flaga g - wszystkie wyst¹pienia
+    const match = text.match(reg);
+    let sum = 0;
+    let ratio = 1;
+    match.forEach(num => {												//kazda liczba suma
+        sum += parseInt(num);
+        ratio *= parseInt(num);											//iloczyn
+    })
+    console.log(`Suma: ${sum}`);
+    for(let i = 0; i < ratio; i++) {									//tworzenie div z iloczcynu
+        const newDiv = document.createElement('div');
+        newDiv.textContent = text;
+        document.body.appendChild(newDiv);
+    }
+}
+
+checkNumbers('Na górze 7 na dole nudy, dlaczego JS jest taki trudny?');		// :(
 
 //Zadanie 12:
 
@@ -90,6 +112,48 @@ const createObj = (text) => {
 };
 createObj('Ala')
 createObj('fala')		//nie ma 'Ala'
+
+//Zadanie 13:
+
+const tableStr = ["A8nBV29sx90", "362x191Z2a"];                         //tabela z cyframi
+
+function sumLettersInString(value){                                     //suma liter
+    let numbers = 0;
+    value.forEach(item => {
+        const textWithoutNumbers = item.replace(/\d+/g, "");            // \d - liczby, flaga g - wszystkie wyst¹pienia
+        numbers += textWithoutNumbers.length;
+    })
+    console.log(numbers);
+}
+
+sumLettersInString(tableStr);                                           //wywo³anie funkcji
+
+function sumNumbers(value){                                             //suma cyfr
+    let sum = 0;
+    value.forEach(item => {
+        item.match(/[0-9]+/g).forEach( number => {                      //szukanie cyfr
+            sum+=(Number(number));
+        })       
+    })
+    console.log(sum);
+}
+
+sumNumbers(tableStr);                                                   //wywo³anie funkcji
+
+function avgNumbers(value){                                             //œrednia z cyfr
+    let sum = 0;
+    let letters = 0;
+    value.forEach(item => {
+        item.match(/[0-9]+/g).forEach( number => {                      //szukanie cyfr
+            sum+=(Number(number));
+            letters = number.length;
+        })    
+    })
+    const avg = sum/letters;                                            //œrednia/d³ugoœæ
+    console.log(avg);
+    return avg;
+}
+avgNumbers(tableStr);                                                   //wywo³anie funkcji
 
 //Zadanie 14:
 
