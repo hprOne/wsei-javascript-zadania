@@ -90,3 +90,23 @@ const createObj = (text) => {
 };
 createObj('Ala')
 createObj('fala')		//nie ma 'Ala'
+
+//Zadanie 14:
+
+let objectPerson = {
+	name: '',
+	surname: '',
+	age: '',
+};
+const checkStringLength = (name, surname, age) => {
+	const old = Object.assign({}, objectPerson);		//savfile
+	objectPerson = { name, surname, age, namel: name.length, surnamel: surname.length, agel: age.length };		//dlugosci string do zmiennych
+	console.log(objectPerson);
+	if (name.length > 5 || surname.length > 5 || age.length > 5) {			//string dluzszy niz 5
+		const buttn = document.createElement('button');					//przycisk o nazwie powrót do stanu pocz. (old)
+		buttn.innerText = 'Powrót do stanu pocz¹tkowego';
+		buttn.onclick = () => console.log((objectPerson = old));
+		root.appendChild(buttn);
+	}
+};
+checkStringLength('NameTest', 'SurnameTest', '40');				//wywo³anie funkcji
