@@ -20,7 +20,7 @@ Na podstawie losowej liczby utwórz odpowiednią ilość divów z tekstem: "to j
 
 #### Zadanie 6
 
-Na podstawie obiektu stwórz struktórę w html
+Na podstawie obiektu stwórz strukturę w html
 
 {
     div1: 'to jest div',
