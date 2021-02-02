@@ -17,11 +17,11 @@ favouriteFruits.forEach((fruit) => {
     favouriteFruitsList.append(fruitElement);
 });
 
-newDiv.append(favouriteFruitsList);
+document.body.appendChild(favouriteFruitsList);
 
 //Zadanie 3:
 
-newDiv.addEventListener('click', () => {                                    //event listener
+favouriteFruitsList.addEventListener('click', () => {                                    //event listener
     Array.from(favouriteFruitsList.children).forEach((listElement, index) => {      //dla kazdego elementu sprawdzanie miejsca w tabeli
         if (index % 2 === 1) {                                              //usun co drugi element z listy
             favouriteFruitsList.removeChild(listElement);
@@ -31,9 +31,14 @@ newDiv.addEventListener('click', () => {                                    //ev
 
 //Zadanie 4:
 
-document.getElementById('ex4').addEventListener('click', (event) => {       //utworzenie button
-    event.target.remove();                                                  //usuniecie po nacisnieciu
-});
+let przycisk = document.createElement('button');                            //przycisk utworz
+przycisk.innerText = 'Usuñ mnie';
+przycisk.addEventListener('click', function() {                             //listener na klikniêcie
+    root.removeChild(this);
+})
+
+root.appendChild(przycisk);                                                 //wyœwietlenie przycisku
+
 
 //Zadanie 5:
 
@@ -71,6 +76,54 @@ function createStructure (obj, parent) {										//struktura z obiektu
 
 createStructure(object1, document.querySelector("#root"));				//wywo³anie funkcji
 
+//Zadanie 7:
+
+const table = ["obj1", "obj2", "test1", "test2", "check1", "check2"];       //tabela 6elem.
+const list1 = document.createElement("ul");                                 //dwie listy
+const list2 = document.createElement("ul");
+const button1 = document.createElement("button");                           //dwa przyciski
+const button2 = document.createElement("button");
+const buttonText = "Przenieœ";
+
+table.forEach((e) => {                                                      //przeniesienie elem z tabeli do listy
+  const li = document.createElement("li");
+  li.innerText = e;
+  list1.appendChild(li);
+});
+
+document.body.appendChild(list1);
+document.body.appendChild(button1);
+button1.textContent = buttonText;
+
+button1.addEventListener("click", () => {                               //listener na przycisk
+  const lastItem1 = list1.lastChild;                                    //podstawienie dwóch ostatnich elementów listy
+  const lastItem2 = list2.lastChild;
+
+  list2.insertBefore(lastItem1, lastItem2);                             //przeniesienie elem z listy1 do listy2
+
+  if (list1.children.length === 0) {
+    button1.disabled = true;                                            //blokada przycisku gdy lista jest z zeroma elementami
+  } else {
+    button2.disabled = false;
+  }
+});
+
+document.body.appendChild(list2);
+document.body.appendChild(button2);
+button2.textContent = buttonText;
+
+button2.addEventListener("click", () => {                               //listener na przycisk
+  const lastItem1 = list1.lastChild;
+  const lastItem2 = list2.lastChild;
+
+  list1.insertBefore(lastItem2, lastItem1);                             //przeniesienie elem z listy1 do listy2
+
+  if (list2.children.length === 0) {
+    button2.disabled = true;
+  } else {
+    button1.disabled = false;                                           //blokada przycisku gdy lista jest z zeroma elementami
+  }
+});
 
 //Zadanie 11:
 
